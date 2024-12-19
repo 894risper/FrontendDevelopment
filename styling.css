@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url(accc.png) ;
+    background-size: cover;
+    
+}
+
+
+.faq {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+ h2 {
+    text-align:left;
+    margin: 0;
+    padding: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    justify-content: right;
+    color: black;
+    border-radius: 5px;
+    background-color:darkslategray;
+    margin-bottom:10px ;
+}
+
+
+.accordion {
+    background-color: white;
+    color:black;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.4s ease;
+    border-radius: 5px;
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+.accordion:after {
+    content: '\+'; 
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    background-color: darkmagenta;
+    border-radius: 50%; 
+    width: 20px; 
+    height: 20px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    line-height: 20px
+}
+
+
+.accordion:hover,
+.accordion-toggle:checked + .accordion {
+    background-color: #ccc;
+}
+
+
+.accordion-toggle:checked + .accordion:after {
+    content: "\-";
+    background-color: black;
+}
+
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 5px;
+}
+
+
+.accordion-toggle:checked + .accordion + .panel {
+    max-height: 500px; 
+}
+
+.accordion-toggle {
+    display: none;
+}
+
+/* Styling for responsiveness */
+@media (max-width: 768px) {
+    .faq {
+        padding: 15px;
+    }
+    .accordion {
+        font-size: 14px;
+    }
+    .panel {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq {
+        padding: 10px;
+    }
+    .accordion {
+        font-size: 13px;
+    }
+    .panel {
+        padding: 8px;
+    }
+}
